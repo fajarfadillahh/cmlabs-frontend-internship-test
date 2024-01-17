@@ -21,7 +21,3 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Preview
-
-You can check preview website 👉👉 [here](https://fadillah-cmlabs-frontend-internship-test.vercel.app)
