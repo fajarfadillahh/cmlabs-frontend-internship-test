@@ -1,11 +1,15 @@
 import "@/styles/globals.css";
 
 import { NextUIProvider } from "@nextui-org/react";
+import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }) {
   return (
-    <NextUIProvider>
-      <Component {...pageProps} />
-    </NextUIProvider>
+    <>
+      <NextNProgress color="#16a34a" />
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
+    </>
   );
 }
