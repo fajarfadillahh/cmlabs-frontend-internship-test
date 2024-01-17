@@ -1,6 +1,7 @@
+import axios from "axios";
+
 import Layout from "@/components/layout";
 import Card from "@/components/card";
-import axios from "axios";
 
 export default function Home({ categories }) {
   return (
@@ -23,7 +24,12 @@ export default function Home({ categories }) {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-x-8 gap-y-4">
           {categories.map((category, index) => (
-            <Card key={index} data={category} />
+            <Card
+              key={index}
+              path={`/category/${encodeURIComponent(category.strCategory)}`}
+              image={category.strCategoryThumb}
+              text={category.strCategory}
+            />
           ))}
         </div>
       </section>
@@ -44,6 +50,8 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
-    console.error("Error fetching categories:", error);
+    console.error(error);
+
+    return null;
   }
 }
